@@ -1,118 +1,52 @@
 <!doctype html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#111827">
-<title>مدیریت کامنت ساندکلود</title>
+<html lang="fa" dir="rtl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#111827">
+<title>SC Manager</title>
 <style>
-:root{color-scheme:dark;--bg:#0b1020;--panel:#151d31;--panel2:#1c2740;--line:#2b3854;--txt:#f4f6fb;--muted:#a9b4c9;--accent:#ff6b35;--green:#39c58a;--yellow:#f5c451;--red:#f27676}
+:root{color-scheme:dark;--panel:#151d31;--panel2:#1c2740;--line:#2b3854;--txt:#f4f6fb;--muted:#a9b4c9;--accent:#ff6b35}
 *{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#111a30,#090e1b 65%);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif;min-height:100vh}
-header{padding:24px 18px 16px;max-width:900px;margin:auto}h1{font-size:22px;margin:0 0 6px}p{color:var(--muted);line-height:1.7;margin:0;font-size:13px}
-main{max-width:900px;margin:auto;padding:0 14px 40px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:8px 0 18px}.stat,.card{background:rgba(21,29,49,.96);border:1px solid var(--line);border-radius:16px;padding:14px}.stat b{display:block;font-size:23px}.stat span{font-size:11px;color:var(--muted)}
+header{padding:24px 18px 16px;max-width:900px;margin:auto}h1{font-size:22px;margin:0 0 6px}p{color:var(--muted);line-height:1.7;margin:0;font-size:13px}main{max-width:900px;margin:auto;padding:0 14px 40px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:8px 0 18px}.stat,.card{background:rgba(21,29,49,.96);border:1px solid var(--line);border-radius:16px;padding:14px}.stat b{display:block;font-size:23px}.stat span{font-size:11px;color:var(--muted)}
 .tabs{display:flex;gap:8px;margin:16px 0;position:sticky;top:0;background:#0d1424;padding:8px 0;z-index:2}.tab{flex:1;border:1px solid var(--line);border-radius:11px;background:var(--panel);color:var(--muted);padding:11px 5px;font-weight:700}.tab.active{background:var(--accent);border-color:var(--accent);color:#fff}
 h2{font-size:17px;margin:0 0 13px}.field{margin:12px 0}.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:7px}
-input,textarea,select{width:100%;border:1px solid var(--line);background:#0d1527;color:var(--txt);border-radius:11px;padding:12px;font:inherit;font-size:14px;outline:none}textarea{min-height:90px;resize:vertical;line-height:1.7}
-input:focus,textarea:focus,select:focus{border-color:var(--accent)}
+input,textarea,select{width:100%;border:1px solid var(--line);background:#0d1527;color:var(--txt);border-radius:11px;padding:12px;font:inherit;font-size:14px;outline:none}textarea{min-height:82px;resize:vertical;line-height:1.7}input:focus,textarea:focus,select:focus{border-color:var(--accent)}
 button{border:0;border-radius:11px;padding:12px 14px;font:inherit;font-size:13px;font-weight:700;cursor:pointer;background:var(--accent);color:white}.secondary{background:var(--panel2);border:1px solid var(--line);color:var(--txt)}.danger{background:#4b222d;color:#ffd8dd;border:1px solid #783444}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.actions button{flex:1}
-.hidden{display:none!important}.hint{font-size:11px;color:var(--muted);line-height:1.7;margin-top:7px}.range-row{display:flex;align-items:center;gap:12px}.range-row input{padding:0;accent-color:var(--accent)}.pill{display:inline-block;border-radius:30px;padding:4px 9px;font-size:11px;background:#26334e;color:#d7e1f4}
-.project{margin:10px 0}.project-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.project h3{font-size:15px;margin:0 0 5px;overflow-wrap:anywhere}.project small{color:var(--muted);font-size:11px}.comment{border-top:1px solid var(--line);padding:10px 0;margin-top:8px}.comment-top{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:7px}.comment-top strong{font-size:13px}.comment textarea{min-height:62px}.status{max-width:145px;padding:8px;font-size:11px}
-.account-row{display:flex;gap:8px;align-items:center;margin:8px 0}.account-row input{min-width:0}.account-row span{color:var(--muted);font-size:12px;min-width:22px}
-.empty{text-align:center;padding:28px 12px;color:var(--muted);font-size:13px}
-footer{text-align:center;color:#7f8aa1;font-size:10px;padding:20px}
-@media(min-width:650px){header{padding-top:34px}.stats{gap:14px}.stat{padding:18px}.card{padding:20px}}
-</style>
-</head>
-<body>
-<header>
-  <h1>مدیریت کامنت ساندکلود</h1>
-  <p>مدیریت محلی پروژه‌ها، ۲۰ پروفایل و متن کامنت‌ها؛ اطلاعات فقط روی همین دستگاه ذخیره می‌شود.</p>
-</header>
+.hidden{display:none!important}.hint{font-size:11px;color:var(--muted);line-height:1.7;margin-top:7px}.range-row{display:flex;align-items:center;gap:12px}.range-row input{padding:0;accent-color:var(--accent)}.pill{border-radius:30px;padding:4px 9px;font-size:11px;background:#26334e;color:#d7e1f4}
+.project{margin:10px 0}.project-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.project h3{font-size:15px;margin:0 0 5px;overflow-wrap:anywhere}.comment{border-top:1px solid var(--line);padding:10px 0;margin-top:8px}.comment-top{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:7px}.comment-top strong{font-size:13px}.status{max-width:145px;padding:8px;font-size:11px}
+.profile{display:flex;gap:12px;align-items:flex-start;margin:10px 0;padding:12px;background:#10182b;border:1px solid var(--line);border-radius:14px}.avatar{width:58px;height:58px;border-radius:50%;object-fit:cover;background:#26334e;flex-shrink:0}.profile-fields{flex:1;min-width:0}.profile-fields input[type=file]{font-size:11px;padding:8px}.profile-fields textarea{min-height:62px}.profile-title{font-size:12px;color:var(--muted);margin-bottom:7px}
+.empty{text-align:center;padding:28px 12px;color:var(--muted);font-size:13px}footer{text-align:center;color:#7f8aa1;font-size:10px;padding:20px}
+@media(min-width:650px){header{padding-top:34px}.stat{padding:18px}.card{padding:20px}}
+</style></head><body>
+<header><h1>مدیریت کامنت ساندکلود</h1><p>مدیریت محلی ۲۰ پروفایل، متن‌های اختصاصی و پروژه‌ها؛ اطلاعات فقط روی همین دستگاه ذخیره می‌شود.</p></header>
 <main>
-  <section class="stats">
-    <div class="stat"><b id="sAccounts">20</b><span>پروفایل تعریف‌شده</span></div>
-    <div class="stat"><b id="sProjects">0</b><span>پروژه‌ها</span></div>
-    <div class="stat"><b id="sDone">0</b><span>موارد تکمیل‌شده</span></div>
-  </section>
-  <nav class="tabs">
-    <button class="tab active" data-tab="new">پروژه جدید</button>
-    <button class="tab" data-tab="projects">پروژه‌ها</button>
-    <button class="tab" data-tab="accounts">اکانت‌ها</button>
-  </nav>
-
-  <section id="new" class="card pane">
-    <h2>ثبت پروژه مشتری</h2>
-    <div class="field"><label for="client">نام مشتری / آرتیست</label><input id="client" placeholder="مثلاً نام آرتیست"></div>
-    <div class="field"><label for="track">لینک ترک ساندکلود</label><input id="track" type="url" placeholder="https://soundcloud.com/..."></div>
-    <div class="field"><label for="count">تعداد کامنت‌ها: <b id="countLabel">5</b></label><div class="range-row"><input id="count" type="range" min="1" max="20" value="5"><span class="pill">۱ تا ۲۰</span></div></div>
-    <div class="field"><label for="comments">متن کامنت‌ها (هر کامنت در یک خط جداگانه)</label><textarea id="comments" placeholder="کامنت اول&#10;کامنت دوم&#10;کامنت سوم"></textarea><div class="hint">به تعداد انتخاب‌شده متن وارد کن. هر کامنت به یک پروفایل اختصاص داده می‌شود.</div></div>
-    <button id="create" style="width:100%">ذخیره پروژه</button>
-    <div class="hint">این ابزار فقط برای ثبت و پیگیری دستی تعاملات واقعی است و کامنتی به ساندکلود ارسال نمی‌کند.</div>
-  </section>
-
-  <section id="projects" class="pane hidden">
-    <div id="projectList"></div>
-  </section>
-
-  <section id="accounts" class="card pane hidden">
-    <h2>مدیریت ۲۰ پروفایل</h2>
-    <p>فقط نام کاربری یا برچسب هر پروفایل را وارد کن. رمز عبور و اطلاعات ورود را اینجا ذخیره نکن.</p>
-    <div id="accountList" style="margin-top:12px"></div>
-    <div class="actions"><button id="saveAccounts">ذخیره پروفایل‌ها</button></div>
-  </section>
-
-  <section class="card" style="margin-top:14px">
-    <h2>پشتیبان‌گیری</h2>
-    <p>برای جلوگیری از ازدست‌رفتن اطلاعات، هر چند وقت یک‌بار فایل پشتیبان بگیر. با پاک‌شدن داده‌های مرورگر ممکن است اطلاعات حذف شوند.</p>
-    <div class="actions">
-      <button class="secondary" id="export">خروجی پشتیبان</button>
-      <button class="secondary" id="importBtn">بازیابی پشتیبان</button>
-      <input id="importFile" type="file" accept="application/json" class="hidden">
-    </div>
-  </section>
-</main>
-<footer>نسخه آفلاین · بدون سرور · بدون ارسال خودکار</footer>
+<section class="stats"><div class="stat"><b id="sAccounts">20</b><span>پروفایل</span></div><div class="stat"><b id="sProjects">0</b><span>پروژه‌ها</span></div><div class="stat"><b id="sDone">0</b><span>موارد تکمیل‌شده</span></div></section>
+<nav class="tabs"><button class="tab active" data-tab="new">پروژه جدید</button><button class="tab" data-tab="projects">پروژه‌ها</button><button class="tab" data-tab="accounts">پروفایل‌ها</button></nav>
+<section id="new" class="card pane"><h2>ثبت پروژه مشتری</h2>
+<div class="field"><label for="client">نام مشتری / آرتیست</label><input id="client" placeholder="نام آرتیست"></div>
+<div class="field"><label for="track">لینک ترک ساندکلود</label><input id="track" type="url" placeholder="https://soundcloud.com/..."></div>
+<div class="field"><label for="count">تعداد پروفایل‌های مورد استفاده: <b id="countLabel">5</b></label><div class="range-row"><input id="count" type="range" min="1" max="20" value="5"><span class="pill">۱ تا ۲۰</span></div></div>
+<div class="hint">برای هر پروفایل، متن پیش‌نویس ذخیره‌شده در بخش پروفایل‌ها قرار می‌گیرد. متن هر مورد را می‌توانی در صفحه پروژه جداگانه ویرایش کنی.</div>
+<button id="create" style="width:100%;margin-top:14px">ساخت پروژه</button><div class="hint">این پنل برای مدیریت پیش‌نویس‌ها و پیگیری بازخوردهای واقعی است و کامنتی به ساندکلود ارسال نمی‌کند.</div></section>
+<section id="projects" class="pane hidden"><div id="projectList"></div></section>
+<section id="accounts" class="card pane hidden"><h2>۲۰ پروفایل ساندکلود</h2><p>برای هر پروفایل نام نمایشی، عکس و متن پیش‌نویس اختصاصی ثبت کن. عکس‌ها در همین مرورگر ذخیره می‌شوند. رمز عبور یا اطلاعات ورود وارد نکن.</p><div id="accountList" style="margin-top:12px"></div><div class="actions"><button id="saveAccounts">ذخیره همه پروفایل‌ها</button></div></section>
+<section class="card" style="margin-top:14px"><h2>پشتیبان‌گیری</h2><p>اطلاعات روی همین دستگاه و مرورگر ذخیره می‌شود. مرتب خروجی پشتیبان بگیر.</p><div class="actions"><button class="secondary" id="export">خروجی پشتیبان</button><button class="secondary" id="importBtn">بازیابی پشتیبان</button><input id="importFile" type="file" accept="application/json" class="hidden"></div></section>
+</main><footer>نسخه ۲ · آفلاین · بدون سرور · بدون ارسال خودکار</footer>
 <script>
-const KEY='sc_comment_manager_v1';
-const defaults={accounts:Array.from({length:20},(_,i)=>({name:'اکانت '+(i+1)})),projects:[]};
-let data;
-try{data=JSON.parse(localStorage.getItem(KEY))||defaults}catch(e){data=defaults}
-if(!Array.isArray(data.accounts)||data.accounts.length!==20)data.accounts=defaults.accounts;
-if(!Array.isArray(data.projects))data.projects=[];
+const KEY='sc_comment_manager_v1',blank=()=>Array.from({length:20},(_,i)=>({name:'پروفایل '+(i+1),photo:'',draft:''}));
+let data;try{data=JSON.parse(localStorage.getItem(KEY))||{accounts:blank(),projects:[]}}catch(e){data={accounts:blank(),projects:[]}}
+if(!Array.isArray(data.accounts))data.accounts=blank();data.accounts=Array.from({length:20},(_,i)=>({...blank()[i],...(data.accounts[i]||{})}));if(!Array.isArray(data.projects))data.projects=[];
 const $=id=>document.getElementById(id);
-function persist(){localStorage.setItem(KEY,JSON.stringify(data));renderStats()}
-function renderStats(){$('sAccounts').textContent='20';$('sProjects').textContent=data.projects.length;$('sDone').textContent=data.projects.reduce((n,p)=>n+p.comments.filter(c=>c.status==='done').length,0)}
-function showTab(name){document.querySelectorAll('.pane').forEach(x=>x.classList.toggle('hidden',x.id!==name));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.tab===name));if(name==='projects')renderProjects();if(name==='accounts')renderAccounts()}
-document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
-$('count').addEventListener('input',()=>{$('countLabel').textContent=$('count').value});
-$('create').addEventListener('click',()=>{
- const client=$('client').value.trim(),track=$('track').value.trim(),n=+$('count').value,lines=$('comments').value.split('\n').map(x=>x.trim()).filter(Boolean);
- if(!track){alert('لینک ترک را وارد کن.');return}
- try{const u=new URL(track);if(!['http:','https:'].includes(u.protocol))throw 0}catch(e){alert('لینک معتبر وارد کن.');return}
- if(lines.length!==n){alert('تعداد متن‌های کامنت باید دقیقاً '+n+' خط باشد.');return}
- data.projects.unshift({id:Date.now(),client:client||'بدون نام',track,count:n,created:new Date().toISOString(),comments:lines.map((text,i)=>({account:i,text,status:'pending'}))});
- persist();$('client').value='';$('track').value='';$('comments').value='';$('count').value=5;$('countLabel').textContent='5';showTab('projects');
-});
-function renderProjects(){
- const root=$('projectList');root.innerHTML='';
- if(!data.projects.length){root.innerHTML='<div class="card empty">هنوز پروژه‌ای ثبت نشده است.</div>';return}
- data.projects.forEach(p=>{
-  const card=document.createElement('article');card.className='card project';
-  const head=document.createElement('div');head.className='project-head';
-  const info=document.createElement('div');const h=document.createElement('h3');h.textContent=p.client;const a=document.createElement('a');a.href=p.track;a.target='_blank';a.rel='noopener';a.textContent='باز کردن ترک';a.style='color:#ff9a72;font-size:12px';info.append(h,a);
-  const del=document.createElement('button');del.className='danger';del.textContent='حذف';del.onclick=()=>{if(confirm('این پروژه حذف شود؟')){data.projects=data.projects.filter(x=>x.id!==p.id);persist();renderProjects()}};head.append(info,del);card.append(head);
-  const meta=document.createElement('p');meta.style.margin='10px 0';meta.textContent=p.comments.length+' کامنت · '+new Date(p.created).toLocaleDateString('fa-IR');card.append(meta);
-  p.comments.forEach((c,i)=>{
-   const wrap=document.createElement('div');wrap.className='comment';const top=document.createElement('div');top.className='comment-top';const label=document.createElement('strong');label.textContent=data.accounts[c.account]?.name||('اکانت '+(c.account+1));const status=document.createElement('select');status.className='status';[['pending','در انتظار'],['done','تکمیل‌شده'],['skip','انجام نشد']].forEach(([v,t])=>{const o=document.createElement('option');o.value=v;o.textContent=t;status.append(o)});status.value=c.status;status.onchange=()=>{c.status=status.value;persist()};top.append(label,status);
-   const ta=document.createElement('textarea');ta.value=c.text;ta.setAttribute('aria-label','متن کامنت '+(i+1));ta.onchange=()=>{c.text=ta.value;persist()};const copy=document.createElement('button');copy.className='secondary';copy.textContent='کپی متن';copy.style.marginTop='7px';copy.onclick=async()=>{try{await navigator.clipboard.writeText(c.text);copy.textContent='کپی شد';setTimeout(()=>copy.textContent='کپی متن',1200)}catch(e){ta.select();document.execCommand('copy');copy.textContent='کپی شد'}};wrap.append(top,ta,copy);card.append(wrap);
-  });root.append(card);
- });
-}
-function renderAccounts(){const root=$('accountList');root.innerHTML='';data.accounts.forEach((a,i)=>{const row=document.createElement('div');row.className='account-row';const num=document.createElement('span');num.textContent=String(i+1).padStart(2,'0');const input=document.createElement('input');input.value=a.name;input.placeholder='نام کاربری یا برچسب';input.dataset.i=i;row.append(num,input);root.append(row)})}
-$('saveAccounts').onclick=()=>{document.querySelectorAll('#accountList input').forEach(x=>data.accounts[+x.dataset.i].name=x.value.trim()||('اکانت '+(+x.dataset.i+1)));persist();renderProjects();alert('پروفایل‌ها ذخیره شدند.')};
-$('export').onclick=()=>{const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='soundcloud-manager-backup.json';a.click();URL.revokeObjectURL(url)};
-$('importBtn').onclick=()=>$('importFile').click();
-$('importFile').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const x=JSON.parse(await f.text());if(!Array.isArray(x.accounts)||!Array.isArray(x.projects))throw 0;if(!confirm('اطلاعات فعلی با پشتیبان جایگزین شود؟'))return;data=x;if(data.accounts.length!==20)data.accounts=defaults.accounts;persist();renderAccounts();renderProjects();alert('پشتیبان بازیابی شد.')}catch(err){alert('فایل پشتیبان معتبر نیست.')}e.target.value=''};
-renderStats();renderAccounts();
-</script>
-</body></html>
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(data));stats()}catch(e){alert('فضای ذخیره‌سازی پر شده؛ عکس کوچک‌تری انتخاب کن.')}}function stats(){$('sProjects').textContent=data.projects.length;$('sDone').textContent=data.projects.reduce((n,p)=>n+(p.comments||[]).filter(c=>c.status==='done').length,0)}
+function tab(n){document.querySelectorAll('.pane').forEach(x=>x.classList.toggle('hidden',x.id!==n));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.tab===n));if(n==='accounts')accounts();if(n==='projects')projects()}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>tab(b.dataset.tab));$('count').oninput=()=>$('countLabel').textContent=$('count').value;
+$('create').onclick=()=>{let track=$('track').value.trim(),n=+$('count').value;try{let u=new URL(track);if(!['http:','https:'].includes(u.protocol))throw 0}catch(e){alert('لینک معتبر ترک را وارد کن.');return}data.projects.unshift({id:Date.now(),client:$('client').value.trim()||'بدون نام',track,created:new Date().toISOString(),comments:data.accounts.slice(0,n).map((a,i)=>({account:i,text:a.draft||'',status:'pending'}))});persist();$('client').value='';$('track').value='';tab('projects')};
+function avatar(src){let im=document.createElement('img');im.className='avatar';im.alt='عکس پروفایل';im.src=src||'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="#26334e"/><circle cx="50" cy="38" r="19" fill="#9aa8c2"/><path d="M15 100c2-25 16-38 35-38s33 13 35 38" fill="#9aa8c2"/></svg>');return im}
+function compress(file){return new Promise((res,rej)=>{let r=new FileReader();r.onload=()=>{let im=new Image();im.onload=()=>{let c=document.createElement('canvas'),s=Math.min(1,320/Math.max(im.width,im.height));c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext('2d').drawImage(im,0,0,c.width,c.height);res(c.toDataURL('image/jpeg',.7))};im.onerror=rej;im.src=r.result};r.onerror=rej;r.readAsDataURL(file)})}
+function accounts(){let root=$('accountList');root.innerHTML='';data.accounts.forEach((a,i)=>{let w=document.createElement('div');w.className='profile';w.append(avatar(a.photo));let f=document.createElement('div');f.className='profile-fields';let t=document.createElement('div');t.className='profile-title';t.textContent='پروفایل '+(i+1);let name=document.createElement('input');name.placeholder='نام نمایشی ساندکلود';name.value=a.name;name.dataset.i=i;name.dataset.field='name';let file=document.createElement('input');file.type='file';file.accept='image/*';file.style.marginTop='7px';file.onchange=async()=>{if(file.files[0]){try{data.accounts[i].photo=await compress(file.files[0]);persist();accounts()}catch(e){alert('خواندن عکس ناموفق بود.')}}};let draft=document.createElement('textarea');draft.placeholder='متن پیش‌نویس اختصاصی این پروفایل';draft.value=a.draft||'';draft.style.marginTop='7px';draft.dataset.i=i;draft.dataset.field='draft';f.append(t,name,file,draft);w.append(f);root.append(w)})}
+$('saveAccounts').onclick=()=>{document.querySelectorAll('#accountList [data-field]').forEach(x=>data.accounts[+x.dataset.i][x.dataset.field]=x.value.trim());persist();alert('پروفایل‌ها ذخیره شدند.')};
+function projects(){let root=$('projectList');root.innerHTML='';if(!data.projects.length){root.innerHTML='<div class="card empty">هنوز پروژه‌ای ثبت نشده است.</div>';return}data.projects.forEach(p=>{let card=document.createElement('article');card.className='card project';let head=document.createElement('div');head.className='project-head';let info=document.createElement('div'),h=document.createElement('h3');h.textContent=p.client;let link=document.createElement('a');link.href=p.track;link.target='_blank';link.rel='noopener';link.textContent='باز کردن ترک';link.style='color:#ff9a72;font-size:12px';info.append(h,link);let del=document.createElement('button');del.className='danger';del.textContent='حذف';del.onclick=()=>{if(confirm('پروژه حذف شود؟')){data.projects=data.projects.filter(x=>x.id!==p.id);persist();projects()}};head.append(info,del);card.append(head);let meta=document.createElement('p');meta.style.margin='10px 0';meta.textContent=p.comments.length+' پیش‌نویس · '+new Date(p.created).toLocaleDateString('fa-IR');card.append(meta);
+p.comments.forEach((c,i)=>{let w=document.createElement('div');w.className='comment';let top=document.createElement('div');top.className='comment-top';let left=document.createElement('div');left.style='display:flex;align-items:center;gap:8px';let ac=data.accounts[c.account]||data.accounts[0],im=avatar(ac.photo);im.style.width='34px';im.style.height='34px';let label=document.createElement('strong');label.textContent=ac.name||'پروفایل';left.append(im,label);let st=document.createElement('select');st.className='status';[['pending','در انتظار'],['done','تکمیل‌شده'],['skip','انجام نشد']].forEach(([v,t])=>{let o=document.createElement('option');o.value=v;o.textContent=t;st.append(o)});st.value=c.status;st.onchange=()=>{c.status=st.value;persist()};top.append(left,st);let ta=document.createElement('textarea');ta.value=c.text;ta.onchange=()=>{c.text=ta.value;persist()};let cp=document.createElement('button');cp.className='secondary';cp.textContent='کپی متن';cp.style.marginTop='7px';cp.onclick=async()=>{try{await navigator.clipboard.writeText(c.text);cp.textContent='کپی شد'}catch(e){ta.select();document.execCommand('copy');cp.textContent='کپی شد'}};w.append(top,ta,cp);card.append(w)});root.append(card)})}
+$('export').onclick=()=>{let blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='sc-manager-backup.json';a.click();URL.revokeObjectURL(url)};
+$('importBtn').onclick=()=>$('importFile').click();$('importFile').onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let x=JSON.parse(await f.text());if(!Array.isArray(x.accounts)||!Array.isArray(x.projects))throw 0;if(confirm('اطلاعات فعلی جایگزین شود؟')){data=x;data.accounts=Array.from({length:20},(_,i)=>({...blank()[i],...(data.accounts[i]||{})}));persist();accounts();projects();alert('پشتیبان بازیابی شد.')}}catch(err){alert('فایل پشتیبان معتبر نیست.')}e.target.value=''};
+stats();
+</script></body></html>
